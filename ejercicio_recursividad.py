@@ -14,8 +14,8 @@ def retroceder(historial, pasos):
 
 #Ejercicio
 historial = ["google.com", "facebook.com", "twitter.com", 
-             "Error 404", "linkedin.com", "github.com", "youtube.com"]
+             "Error 404", "linkedin.com", "github.com", "youtube.com", "instagram.com"]
 
 print("\nHistorial actual: ", historial)
-historial = retroceder(historial, 4)
+historial = retroceder(historial, 5)
 print("Historial Final: ", historial)
