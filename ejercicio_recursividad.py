@@ -6,7 +6,7 @@ def retroceder(historial, pasos):
         return historial
     #Caso base 2: si el último elemento es "Error 404", se detiene el retroceso
     if historial[-1] == "Error 404":
-        print("Error 404 encontrado, deteniendo retroceso.")
+        print("\nError 404 encontrado, deteniendo retroceso.")
         return historial
     #Eliminar el último elemento del historial
     historial.pop() # Elimina historial[-1]
@@ -18,4 +18,4 @@ historial = ["google.com", "facebook.com", "twitter.com",
 
 print("\nHistorial actual: ", historial)
 historial = retroceder(historial, 5)
-print("Historial Final: ", historial)
+print("\nHistorial Final: ", historial)
