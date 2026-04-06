@@ -11,22 +11,21 @@ c) top_n(n) — Retorna los N jugadores con mayor puntuación.
 """
 
 # Usa la clase BST del ejemplo anterior y agrégale:
-class Nodo:
+class Nodo: # Nodo del árbol binario de búsqueda
     def __init__(self, valor):
         self.valor = valor
         self.izquierda = None
         self.derecha = None
 
-
-class BST:
+class BST: # Árbol binario de búsqueda
     # ... (código anterior) ...
     def __init__(self):
-        self.raiz = None
+        self.raiz = None # raíz del árbol
 
     def insertar(self, valor):
-        self.raiz = self._insertar(self.raiz, valor)
+        self.raiz = self._insertar(self.raiz, valor) # ← método público que inicia la recursión
 
-    def _insertar(self, nodo, valor):
+    def _insertar(self, nodo, valor): # ← método recursivo que inserta el valor en el lugar correcto
         if nodo is None:
             return Nodo(valor)
         if valor < nodo.valor:
@@ -35,10 +34,10 @@ class BST:
             nodo.derecha = self._insertar(nodo.derecha, valor)
         return nodo
 
-    def buscar(self, valor):
+    def buscar(self, valor): # método público que inicia la búsqueda recursiva
         return self._buscar(self.raiz, valor)
 
-    def _buscar(self, nodo, valor):
+    def _buscar(self, nodo, valor): # método recursivo que busca el valor en el árbol
         if nodo is None or nodo.valor == valor:
             return nodo
         if valor < nodo.valor:
@@ -46,7 +45,7 @@ class BST:
         return self._buscar(nodo.derecha, valor)
 
     # InOrder: recorre izq → raíz → der (resultado ordenado)
-    def inorder(self, nodo="__raiz__"):
+    def inorder(self, nodo="__raiz__"): # método público que inicia el recorrido InOrder
         if nodo == "__raiz__":
             nodo = self.raiz
         if nodo:
@@ -54,7 +53,7 @@ class BST:
             yield nodo.valor                          # ← luego el valor
             yield from self.inorder(nodo.derecha)    # ← luego derecha
 
-    def reverse_inorder(self, nodo="__raiz__"):
+    def reverse_inorder(self, nodo="__raiz__"): # método público que inicia el recorrido InOrder inverso (descendente)
         if nodo == "__raiz__":
             nodo = self.raiz
         if nodo:
@@ -62,27 +61,27 @@ class BST:
             yield nodo.valor                              # ← luego el valor
             yield from self.reverse_inorder(nodo.izquierda)    # ← luego izquierda
 
-    def minimo(self):
+    def minimo(self): # metodo público que inicia la búsqueda del mínimo
         # nodo actual → ¿tiene izquierda? → sí → muévete → ¿tiene izquierda? → no → ese es el mínimo
         nodo = self._minimo(self.raiz)
         return nodo.valor
 
-    def _minimo(self, nodo):
+    def _minimo(self, nodo): # método recursivo que busca el nodo con el valor mínimo
         if nodo.izquierda:
             return self._minimo(nodo.izquierda)
         return nodo
 
-    def maximo(self):
+    def maximo(self): # método público que inicia la búsqueda del máximo
         # nodo actual → ¿tiene derecha? → sí → muévete → ¿tiene derecha? → no → ese es el máximo
         nodo = self._maximo(self.raiz)
         return nodo.valor
     
-    def _maximo(self, nodo):
+    def _maximo(self, nodo): # método recursivo que busca el nodo con el valor máximo
         if nodo.derecha:
             return self._maximo(nodo.derecha)
         return nodo
 
-    def top_n(self, n):
+    def top_n(self, n): # método público que retorna los N jugadores con mayor puntuación
         # Pista: InOrder da orden ascendente. ¿Cuál da descendente?
         return list(self.reverse_inorder())[:n]      
 

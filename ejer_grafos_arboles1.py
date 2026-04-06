@@ -9,20 +9,6 @@ entre dos estaciones. Si no existe camino, retorna None.
 """
 from collections import deque
 
-metro = {
-    "Portal Norte":   ["Toberín"],
-    "Toberín":        ["Portal Norte", "Calle 142"],
-    "Calle 142":      ["Toberín", "Calle 127"],
-    "Calle 127":      ["Calle 142", "Pepe Sierra", "Alcalá"],
-    "Pepe Sierra":    ["Calle 127", "Niza"],
-    "Alcalá":         ["Calle 127", "Calle 100"],
-    "Niza":           ["Pepe Sierra", "Calle 100"],
-    "Calle 100":      ["Alcalá", "Niza", "Virrey"],
-    "Virrey":         ["Calle 100", "Centro"],
-    "Centro":         ["Virrey", "Portal Sur"],
-    "Portal Sur":     ["Centro"],
-}
-
 # TU SOLUCIÓN AQUÍ:
 # ---- BFS: Búsqueda en Anchura (nivel por nivel) ----
 """def bfs(grafo, inicio):
@@ -42,28 +28,42 @@ metro = {
 
     return orden
 """
-def ruta_minima(grafo, origen, destino):
+def ruta_minima(grafo, origen, destino): # funcion que inicia la búsqueda del camino mínimo
     # Pista: usa BFS con seguimiento del camino
     visitados = set()
     cola = deque([[origen]])  # ← cada elemento es un camino completo
     visitados.add(origen)
 
-    while cola:
+    while cola: # mientras haya caminos por explorar
         camino = cola.popleft() # ← sacamos el camino (lista)
         nodo = camino[-1] # ← el nodo actual es el último de la lista
 
-        if nodo == destino:
+        if nodo == destino: # ← hemos llegado al destino
             return camino   # ← encontramos el camino
 
         for vecino in grafo.get(nodo, []):  # ← este camino llegó al destino ✓
-            if vecino not in visitados:
-                visitados.add(vecino)
+            if vecino not in visitados: # ← si el vecino no ha sido visitado
+                visitados.add(vecino) # ← marcamos el vecino como visitado
                 cola.append(camino + [vecino])  # ← lista con el camino completo
 
     return None # no existe camino
 
 
 # Prueba:
+metro = {
+    "Portal Norte":   ["Toberín"],
+    "Toberín":        ["Portal Norte", "Calle 142"],
+    "Calle 142":      ["Toberín", "Calle 127"],
+    "Calle 127":      ["Calle 142", "Pepe Sierra", "Alcalá"],
+    "Pepe Sierra":    ["Calle 127", "Niza"],
+    "Alcalá":         ["Calle 127", "Calle 100"],
+    "Niza":           ["Pepe Sierra", "Calle 100"],
+    "Calle 100":      ["Alcalá", "Niza", "Virrey"],
+    "Virrey":         ["Calle 100", "Centro"],
+    "Centro":         ["Virrey", "Portal Sur"],
+    "Portal Sur":     ["Centro"],
+}
+
 print("\n", ruta_minima(metro, "Portal Norte", "Centro"))
 # Esperado: ['Portal Norte', 'Toberín', 'Calle 142',
 #            'Calle 127', 'Alcalá', 'Calle 100', 'Virrey', 'Centro']
