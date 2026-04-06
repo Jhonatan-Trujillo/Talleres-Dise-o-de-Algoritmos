@@ -83,7 +83,7 @@ class BST: # Árbol binario de búsqueda
 
     def top_n(self, n): # método público que retorna los N jugadores con mayor puntuación
         # Pista: InOrder da orden ascendente. ¿Cuál da descendente?
-        return list(self.reverse_inorder())[:n]      
+        return list(self.reverse_inorder())[:n] # ← devuelve los N primeros
 
 
 # Prueba:
