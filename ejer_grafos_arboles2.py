@@ -10,7 +10,6 @@ b) maximo() — Retorna el jugador con mayor puntuación.
 c) top_n(n) — Retorna los N jugadores con mayor puntuación.
 """
 
-# Usa la clase BST del ejemplo anterior y agrégale:
 class Nodo: # Nodo del árbol binario de búsqueda
     def __init__(self, valor):
         self.valor = valor
@@ -18,7 +17,7 @@ class Nodo: # Nodo del árbol binario de búsqueda
         self.derecha = None
 
 class BST: # Árbol binario de búsqueda
-    # ... (código anterior) ...
+
     def __init__(self):
         self.raiz = None # raíz del árbol
 

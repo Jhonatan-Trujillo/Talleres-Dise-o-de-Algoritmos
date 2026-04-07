@@ -12,8 +12,7 @@ from collections import deque
 """deque: estructura de datos tipo lista optimizada para operaciones de inserción y eliminación en 
 ambos extremos (cola doble)"""
 
-# TU SOLUCIÓN AQUÍ:
-# ---- BFS: Búsqueda en Anchura (nivel por nivel) ----
+
 """def bfs(grafo, inicio):
     visitados = set()
     cola = deque([inicio])
@@ -32,7 +31,7 @@ ambos extremos (cola doble)"""
     return orden
 """
 def ruta_minima(grafo, origen, destino): # funcion que inicia la búsqueda del camino mínimo
-    # Pista: usa BFS con seguimiento del camino
+
     visitados = set() # conjunto para marcar estaciones visitadas y evitar ciclos
     cola = deque([[origen]])  # ← cada elemento es un camino completo
     visitados.add(origen) #  ← marcamos el origen como visitado
@@ -49,7 +48,7 @@ def ruta_minima(grafo, origen, destino): # funcion que inicia la búsqueda del c
                 visitados.add(vecino) # ← marcamos el vecino como visitado
                 cola.append(camino + [vecino])  # ← lista con el camino completo
 
-    return None # no existe camino
+    return None 
 
 
 # Prueba:
@@ -73,3 +72,4 @@ print("\n", ruta_minima(metro, "Portal Norte", "Centro"))
 print("\n", ruta_minima(metro, "Portal Norte", "Portal Sur"))
 # Esperado: ['Portal Norte', 'Toberín', 'Calle 142',
 #            'Calle 127', 'Alcalá', 'Calle 100', 'Virrey', 'Centro', 'Portal Sur']
+print("\n", ruta_minima(metro, "Portal Norte", " "))
