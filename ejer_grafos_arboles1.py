@@ -9,6 +9,9 @@ entre dos estaciones. Si no existe camino, retorna None.
 """
 from collections import deque
 
+"""deque: estructura de datos tipo lista optimizada para operaciones de inserción y eliminación en 
+ambos extremos (cola doble)"""
+
 # TU SOLUCIÓN AQUÍ:
 # ---- BFS: Búsqueda en Anchura (nivel por nivel) ----
 """def bfs(grafo, inicio):
@@ -30,9 +33,9 @@ from collections import deque
 """
 def ruta_minima(grafo, origen, destino): # funcion que inicia la búsqueda del camino mínimo
     # Pista: usa BFS con seguimiento del camino
-    visitados = set()
+    visitados = set() # conjunto para marcar estaciones visitadas y evitar ciclos
     cola = deque([[origen]])  # ← cada elemento es un camino completo
-    visitados.add(origen)
+    visitados.add(origen) #  ← marcamos el origen como visitado
 
     while cola: # mientras haya caminos por explorar
         camino = cola.popleft() # ← sacamos el camino (lista)

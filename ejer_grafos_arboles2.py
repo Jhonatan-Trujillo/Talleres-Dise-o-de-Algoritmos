@@ -22,7 +22,7 @@ class BST: # Árbol binario de búsqueda
     def __init__(self):
         self.raiz = None # raíz del árbol
 
-    def insertar(self, valor):
+    def insertar(self, valor): 
         self.raiz = self._insertar(self.raiz, valor) # ← método público que inicia la recursión
 
     def _insertar(self, nodo, valor): # ← método recursivo que inserta el valor en el lugar correcto
@@ -57,6 +57,8 @@ class BST: # Árbol binario de búsqueda
         if nodo == "__raiz__":
             nodo = self.raiz
         if nodo:
+            """yield: retorna el valor de la iteración actual y pausa la función,
+              permitiendo reanudarla en la siguiente llamada"""
             yield from self.reverse_inorder(nodo.derecha)  # ← primero derecha
             yield nodo.valor                              # ← luego el valor
             yield from self.reverse_inorder(nodo.izquierda)    # ← luego izquierda
