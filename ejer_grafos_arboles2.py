@@ -22,7 +22,7 @@ class BST: # Árbol binario de búsqueda
         self.raiz = None # raíz del árbol
 
     def insertar(self, valor): 
-        self.raiz = self._insertar(self.raiz, valor) # ← método público que inicia la recursión
+        self.raiz = self._insertar(self.raiz, valor) # ← método que inicia la recursión
 
     def _insertar(self, nodo, valor): # ← método recursivo que inserta el valor en el lugar correcto
         if nodo is None:
