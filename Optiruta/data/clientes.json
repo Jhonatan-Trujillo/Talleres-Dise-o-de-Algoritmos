@@ -1,0 +1,653 @@
+{
+  "clientes": [
+    {
+      "node_id": 4896000497,
+      "nombre": "Cliente_4896000497",
+      "latitud": 4.4119261,
+      "longitud": -75.2656089,
+      "peso_kg": 11.3,
+      "volumen": [
+        57.2,
+        92.0,
+        80.8
+      ],
+      "producto": "Equipo deportivo",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Parque Centenario Ibagué",
+      "destino_latitud": 4.4476255,
+      "destino_longitud": -75.242679,
+      "destino_node_id": 329288635
+    },
+    {
+      "node_id": 290557219,
+      "nombre": "Cliente_290557219",
+      "latitud": 4.4391487,
+      "longitud": -75.2287697,
+      "peso_kg": 39.07,
+      "volumen": [
+        94.0,
+        83.4,
+        28.2
+      ],
+      "producto": "Computador",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Terminal de Transportes Ibagué",
+      "destino_latitud": 4.4368081,
+      "destino_longitud": -75.2343496,
+      "destino_node_id": 330012726
+    },
+    {
+      "node_id": 6913559449,
+      "nombre": "Cliente_6913559449",
+      "latitud": 4.4516533,
+      "longitud": -75.1340468,
+      "peso_kg": 16.22,
+      "volumen": [
+        61.6,
+        53.0,
+        87.9
+      ],
+      "producto": "Nevera",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Picaleña Ibagué",
+      "destino_latitud": 4.4299555,
+      "destino_longitud": -75.1929699,
+      "destino_node_id": 6935389729
+    },
+    {
+      "node_id": 3346897030,
+      "nombre": "Cliente_3346897030",
+      "latitud": 4.4569092,
+      "longitud": -75.132217,
+      "peso_kg": 28.62,
+      "volumen": [
+        19.1,
+        91.5,
+        88.8
+      ],
+      "producto": "Documentos",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Aeropuerto Perales Ibagué",
+      "destino_latitud": 4.4217788,
+      "destino_longitud": -75.1346535,
+      "destino_node_id": 9649748500
+    },
+    {
+      "node_id": 5929727011,
+      "nombre": "Cliente_5929727011",
+      "latitud": 4.4344558,
+      "longitud": -75.20855,
+      "peso_kg": 37.9,
+      "volumen": [
+        93.1,
+        31.6,
+        81.2
+      ],
+      "producto": "Documentos",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Centro Comercial La Estación Ibagué",
+      "destino_latitud": 4.445518,
+      "destino_longitud": -75.204593,
+      "destino_node_id": 12334914395
+    },
+    {
+      "node_id": 7581251531,
+      "nombre": "Cliente_7581251531",
+      "latitud": 4.4351866,
+      "longitud": -75.2430483,
+      "peso_kg": 12.51,
+      "volumen": [
+        13.5,
+        37.7,
+        52.8
+      ],
+      "producto": "Colchón",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Centro Comercial La Estación Ibagué",
+      "destino_latitud": 4.445518,
+      "destino_longitud": -75.204593,
+      "destino_node_id": 12334914395
+    },
+    {
+      "node_id": 368049038,
+      "nombre": "Cliente_368049038",
+      "latitud": 4.4529684,
+      "longitud": -75.1656955,
+      "peso_kg": 31.53,
+      "volumen": [
+        88.3,
+        65.6,
+        95.5
+      ],
+      "producto": "Caja de productos electrónicos",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Hospital Federico Lleras Acosta Ibagué",
+      "destino_latitud": 4.4333574,
+      "destino_longitud": -75.2189664,
+      "destino_node_id": 360899839
+    },
+    {
+      "node_id": 365778979,
+      "nombre": "Cliente_365778979",
+      "latitud": 4.4327036,
+      "longitud": -75.239192,
+      "peso_kg": 20.23,
+      "volumen": [
+        84.3,
+        55.9,
+        46.2
+      ],
+      "producto": "Ropa empacada",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Aeropuerto Perales Ibagué",
+      "destino_latitud": 4.4217788,
+      "destino_longitud": -75.1346535,
+      "destino_node_id": 9649748500
+    },
+    {
+      "node_id": 9319987810,
+      "nombre": "Cliente_9319987810",
+      "latitud": 4.4562527,
+      "longitud": -75.2410135,
+      "peso_kg": 30.73,
+      "volumen": [
+        51.5,
+        57.4,
+        22.4
+      ],
+      "producto": "Caja de medicamentos",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Universidad de Ibagué",
+      "destino_latitud": 4.449702,
+      "destino_longitud": -75.1991135,
+      "destino_node_id": 314423085
+    },
+    {
+      "node_id": 9302121502,
+      "nombre": "Cliente_9302121502",
+      "latitud": 4.4086897,
+      "longitud": -75.1870152,
+      "peso_kg": 18.43,
+      "volumen": [
+        25.2,
+        17.5,
+        21.5
+      ],
+      "producto": "Documentos",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Universidad de Ibagué",
+      "destino_latitud": 4.449702,
+      "destino_longitud": -75.1991135,
+      "destino_node_id": 314423085
+    },
+    {
+      "node_id": 2608952736,
+      "nombre": "Cliente_2608952736",
+      "latitud": 4.4891515,
+      "longitud": -75.1446124,
+      "peso_kg": 12.82,
+      "volumen": [
+        42.3,
+        71.5,
+        82.3
+      ],
+      "producto": "Labial rojo",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Hospital Federico Lleras Acosta Ibagué",
+      "destino_latitud": 4.4333574,
+      "destino_longitud": -75.2189664,
+      "destino_node_id": 360899839
+    },
+    {
+      "node_id": 7578886871,
+      "nombre": "Cliente_7578886871",
+      "latitud": 4.4558864,
+      "longitud": -75.1590157,
+      "peso_kg": 18.48,
+      "volumen": [
+        78.1,
+        76.1,
+        47.9
+      ],
+      "producto": "Nevera",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Chapetón Ibagué",
+      "destino_latitud": 4.459792,
+      "destino_longitud": -75.27119,
+      "destino_node_id": 7606879578
+    },
+    {
+      "node_id": 7567412415,
+      "nombre": "Cliente_7567412415",
+      "latitud": 4.4475813,
+      "longitud": -75.1455736,
+      "peso_kg": 33.85,
+      "volumen": [
+        94.6,
+        28.5,
+        13.6
+      ],
+      "producto": "Caja de medicamentos",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Terminal de Transportes Ibagué",
+      "destino_latitud": 4.4368081,
+      "destino_longitud": -75.2343496,
+      "destino_node_id": 330012726
+    },
+    {
+      "node_id": 8920877889,
+      "nombre": "Cliente_8920877889",
+      "latitud": 4.3915512,
+      "longitud": -75.1424509,
+      "peso_kg": 20.16,
+      "volumen": [
+        18.6,
+        29.6,
+        96.2
+      ],
+      "producto": "Spray de limpieza",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Terminal de Transportes Ibagué",
+      "destino_latitud": 4.4368081,
+      "destino_longitud": -75.2343496,
+      "destino_node_id": 330012726
+    },
+    {
+      "node_id": 7596023922,
+      "nombre": "Cliente_7596023922",
+      "latitud": 4.4455389,
+      "longitud": -75.1696432,
+      "peso_kg": 34.79,
+      "volumen": [
+        52.8,
+        78.4,
+        60.2
+      ],
+      "producto": "Botellón de agua",
+      "origen": "Centro de distribución Ibagué",
+      "destino": "Parque de la Música Ibagué",
+      "destino_latitud": 4.4432679,
+      "destino_longitud": -75.2443902,
+      "destino_node_id": 5261122396
+    }
+  ],
+  "destinos_disponibles": [
+    {
+      "nombre": "Centro Comercial Multicentro Ibagué",
+      "latitud_real": 4.4371244,
+      "longitud_real": -75.2012389,
+      "node_id": 364519963,
+      "latitud_nodo": 4.4375606,
+      "longitud_nodo": -75.2007189
+    },
+    {
+      "nombre": "Centro Comercial La Estación Ibagué",
+      "latitud_real": 4.445518,
+      "longitud_real": -75.204593,
+      "node_id": 12334914395,
+      "latitud_nodo": 4.4464563,
+      "longitud_nodo": -75.2048283
+    },
+    {
+      "nombre": "Parque Centenario Ibagué",
+      "latitud_real": 4.4476255,
+      "longitud_real": -75.242679,
+      "node_id": 329288635,
+      "latitud_nodo": 4.4474041,
+      "longitud_nodo": -75.2429699
+    },
+    {
+      "nombre": "Plaza de Bolívar Ibagué",
+      "latitud_real": 4.4446796,
+      "longitud_real": -75.2430511,
+      "node_id": 6271844608,
+      "latitud_nodo": 4.4452964,
+      "longitud_nodo": -75.2431544
+    },
+    {
+      "nombre": "Terminal de Transportes Ibagué",
+      "latitud_real": 4.4368081,
+      "longitud_real": -75.2343496,
+      "node_id": 330012726,
+      "latitud_nodo": 4.4377671,
+      "longitud_nodo": -75.2343975
+    },
+    {
+      "nombre": "Aeropuerto Perales Ibagué",
+      "latitud_real": 4.4217788,
+      "longitud_real": -75.1346535,
+      "node_id": 9649748500,
+      "latitud_nodo": 4.4234704,
+      "longitud_nodo": -75.1386258
+    },
+    {
+      "nombre": "Hospital Federico Lleras Acosta Ibagué",
+      "latitud_real": 4.4333574,
+      "longitud_real": -75.2189664,
+      "node_id": 360899839,
+      "latitud_nodo": 4.4339158,
+      "longitud_nodo": -75.2188275
+    },
+    {
+      "nombre": "Universidad del Tolima Ibagué",
+      "latitud_real": 4.4277325,
+      "longitud_real": -75.2126011,
+      "node_id": 13164438473,
+      "latitud_nodo": 4.4286134,
+      "longitud_nodo": -75.2134225
+    },
+    {
+      "nombre": "Universidad de Ibagué",
+      "latitud_real": 4.449702,
+      "longitud_real": -75.1991135,
+      "node_id": 314423085,
+      "latitud_nodo": 4.4490821,
+      "longitud_nodo": -75.2001245
+    },
+    {
+      "nombre": "Estadio Manuel Murillo Toro Ibagué",
+      "latitud_real": 4.4298004,
+      "longitud_real": -75.2180031,
+      "node_id": 287759575,
+      "latitud_nodo": 4.4295764,
+      "longitud_nodo": -75.2170471
+    },
+    {
+      "nombre": "Parque de la Música Ibagué",
+      "latitud_real": 4.4432679,
+      "longitud_real": -75.2443902,
+      "node_id": 5261122396,
+      "latitud_nodo": 4.4435845,
+      "longitud_nodo": -75.2445172
+    },
+    {
+      "nombre": "Hospital San Francisco Ibagué",
+      "latitud_real": 4.4436408,
+      "longitud_real": -75.227101,
+      "node_id": 2630637130,
+      "latitud_nodo": 4.4432809,
+      "longitud_nodo": -75.2273044
+    },
+    {
+      "nombre": "Barrio El Salado Ibagué",
+      "latitud_real": 4.4554822,
+      "longitud_real": -75.1344028,
+      "node_id": 3346877434,
+      "latitud_nodo": 4.4551467,
+      "longitud_nodo": -75.1342214
+    },
+    {
+      "nombre": "Chapetón Ibagué",
+      "latitud_real": 4.459792,
+      "longitud_real": -75.27119,
+      "node_id": 7606879578,
+      "latitud_nodo": 4.4598808,
+      "longitud_nodo": -75.2710864
+    },
+    {
+      "nombre": "Picaleña Ibagué",
+      "latitud_real": 4.4299555,
+      "longitud_real": -75.1929699,
+      "node_id": 6935389729,
+      "latitud_nodo": 4.4287598,
+      "longitud_nodo": -75.192039
+    }
+  ],
+  "matriz_distancias": [
+    [
+      0.0,
+      6738.54,
+      17404.1,
+      17857.03,
+      8689.78,
+      4355.91,
+      14866.79,
+      4296.2,
+      7179.07,
+      12033.84,
+      22567.43,
+      15151.44,
+      16126.1,
+      17654.95,
+      13283.93
+    ],
+    [
+      6545.58,
+      0.0,
+      11441.0,
+      11893.93,
+      2797.1,
+      2542.21,
+      8903.7,
+      2329.14,
+      2998.34,
+      10279.63,
+      16604.33,
+      9188.35,
+      10163.01,
+      14092.27,
+      7415.62
+    ],
+    [
+      17507.0,
+      11247.31,
+      0.0,
+      874.07,
+      9022.32,
+      13696.45,
+      4123.16,
+      13290.57,
+      13439.75,
+      14291.87,
+      7008.53,
+      4152.5,
+      1651.95,
+      12035.93,
+      4416.62
+    ],
+    [
+      17959.93,
+      11700.24,
+      874.07,
+      0.0,
+      9475.26,
+      14149.38,
+      4576.09,
+      13743.5,
+      13892.68,
+      14744.8,
+      6880.43,
+      4605.43,
+      2227.83,
+      12891.11,
+      4869.55
+    ],
+    [
+      8687.36,
+      2578.71,
+      9060.15,
+      9513.08,
+      0.0,
+      4912.55,
+      6522.85,
+      4470.92,
+      5188.16,
+      9436.5,
+      14223.48,
+      6807.5,
+      7782.16,
+      12107.21,
+      4939.99
+    ],
+    [
+      4062.47,
+      3275.65,
+      14308.09,
+      14761.03,
+      5593.78,
+      0.0,
+      11770.79,
+      1196.28,
+      3692.67,
+      10890.49,
+      19471.42,
+      12055.44,
+      13030.1,
+      16511.59,
+      10187.93
+    ],
+    [
+      14969.7,
+      8710.01,
+      4123.16,
+      4576.09,
+      6485.02,
+      11159.15,
+      0.0,
+      10753.26,
+      10902.44,
+      11754.56,
+      9286.49,
+      1450.52,
+      2845.17,
+      14189.95,
+      1879.32
+    ],
+    [
+      4324.32,
+      2550.22,
+      13215.78,
+      13668.71,
+      4501.47,
+      797.96,
+      10678.48,
+      0.0,
+      3561.99,
+      9798.17,
+      18379.11,
+      10963.13,
+      11937.79,
+      15419.28,
+      9095.62
+    ],
+    [
+      7300.13,
+      3051.55,
+      13671.65,
+      14124.59,
+      5304.12,
+      3237.65,
+      11134.35,
+      3680.61,
+      0.0,
+      12657.42,
+      18834.98,
+      11419.0,
+      12393.66,
+      16968.13,
+      9657.53
+    ],
+    [
+      13911.43,
+      9579.39,
+      12200.98,
+      12653.91,
+      7602.7,
+      11757.39,
+      9663.68,
+      10959.43,
+      12355.36,
+      0.0,
+      17364.31,
+      9948.33,
+      10922.99,
+      7244.9,
+      8080.82
+    ],
+    [
+      22670.33,
+      16410.64,
+      7008.53,
+      6880.43,
+      14185.65,
+      18859.78,
+      9286.49,
+      18453.9,
+      18603.08,
+      19455.2,
+      0.0,
+      9271.46,
+      6962.85,
+      18337.06,
+      9579.95
+    ],
+    [
+      15254.35,
+      8994.66,
+      4152.5,
+      4605.43,
+      6769.67,
+      11443.8,
+      1450.52,
+      11037.91,
+      11187.09,
+      12039.21,
+      9271.46,
+      0.0,
+      2874.51,
+      14219.29,
+      2163.97
+    ],
+    [
+      16124.66,
+      9963.35,
+      1651.58,
+      2227.83,
+      7639.99,
+      12349.86,
+      2845.17,
+      11908.23,
+      12161.75,
+      12909.53,
+      6962.85,
+      2874.51,
+      0.0,
+      11535.28,
+      3034.29
+    ],
+    [
+      17981.65,
+      12117.53,
+      8896.51,
+      9752.06,
+      10140.84,
+      14371.63,
+      11039.63,
+      13765.21,
+      14893.5,
+      10204.5,
+      15140.75,
+      11068.97,
+      8351.75,
+      0.0,
+      10618.97
+    ],
+    [
+      13356.74,
+      7195.43,
+      4386.52,
+      4839.46,
+      4872.06,
+      9581.94,
+      1849.22,
+      9140.31,
+      9408.03,
+      10141.61,
+      9549.85,
+      2133.87,
+      3108.53,
+      12812.31,
+      0.0
+    ]
+  ]
+}

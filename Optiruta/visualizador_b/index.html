@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OPTIRUTA+ — Visualización Backtracking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="app">
+  <header>
+    <div class="logo">OPTIRUTA<span>+</span> / backtracking visualizer</div>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-val" id="hdr-paso">0</div>
+        <div class="stat-label">paso actual</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val" id="hdr-total">—</div>
+        <div class="stat-label">total pasos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val" id="hdr-nodos">0</div>
+        <div class="stat-label">clientes (N)</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="legend">
+    <div class="legend-item"><div class="dot dot-explore"></div>explorar</div>
+    <div class="legend-item"><div class="dot dot-backtrack"></div>backtrack</div>
+    <div class="legend-item"><div class="dot dot-poda-dist"></div>poda distancia</div>
+    <div class="legend-item"><div class="dot dot-poda-peso"></div>poda peso</div>
+    <div class="legend-item"><div class="dot dot-mejor"></div>mejor ruta</div>
+  </div>
+
+  <div class="main">
+    <div class="canvas-wrap">
+      <canvas id="c"></canvas>
+    </div>
+
+    <div class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">Cargar datos</div>
+        <label class="upload-zone" id="dropzone">
+          <input type="file" id="file-input" accept=".json">
+          <div class="upload-text">📂 pasos_backtracking.json</div>
+          <div class="upload-hint">Clic para seleccionar archivo</div>
+          <div class="file-name" id="file-name"></div>
+        </label>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Reproducción</div>
+        <div class="controls">
+          <div class="btn-row">
+            <button class="btn primary" id="btn-play" onclick="togglePlay()" disabled>▶ Play</button>
+            <button class="btn" id="btn-reset" onclick="resetAnim()" disabled>↺ Reset</button>
+          </div>
+          <button class="btn" id="btn-step" onclick="stepForward()" disabled>→ Paso a paso</button>
+          <div class="speed-wrap">
+            <span class="speed-label">Velocidad</span>
+            <input type="range" id="speed" min="1" max="200" value="30" oninput="updateSpeed()">
+            <span id="speed-val" style="font-size:11px;color:var(--muted);font-family:var(--mono);min-width:36px">30/s</span>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog"></div></div>
+            <div class="progress-text">
+              <span id="prog-cur">0</span>
+              <span id="prog-tot">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Contadores</div>
+        <div class="counter-grid">
+          <div class="counter-card">
+            <div class="counter-val c-explore" id="cnt-explore">0</div>
+            <div class="counter-lbl">explorados</div>
+          </div>
+          <div class="counter-card">
+            <div class="counter-val c-backtrack" id="cnt-back">0</div>
+            <div class="counter-lbl">backtracks</div>
+          </div>
+          <div class="counter-card">
+            <div class="counter-val c-poda" id="cnt-poda">0</div>
+            <div class="counter-lbl">podas</div>
+          </div>
+          <div class="counter-card">
+            <div class="counter-val c-mejor" id="cnt-mejor">0</div>
+            <div class="counter-lbl">mejoras</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Mejor ruta</div>
+        <div class="best-route" id="best-route">—</div>
+        <div class="best-dist" id="best-dist"></div>
+      </div>
+
+      <div class="log-wrap" id="log"></div>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

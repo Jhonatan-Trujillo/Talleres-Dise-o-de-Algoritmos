@@ -1,0 +1,22 @@
+{
+  "vehiculos": [
+    {
+      "tipo": "moto",
+      "volumen_max": [40.0, 40.0, 50.0],
+      "peso_max_kg": 35.0,
+      "kilometraje": 250.0
+    },
+    {
+      "tipo": "carro",
+      "volumen_max": [120.0, 100.0, 150.0],
+      "peso_max_kg": 500.0,
+      "kilometraje": 600.0
+    },
+    {
+      "tipo": "camion",
+      "volumen_max": [500.0, 300.0, 800.0],
+      "peso_max_kg": 8000.0,
+      "kilometraje": 1200.0
+    }
+  ]
+}
