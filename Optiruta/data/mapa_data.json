@@ -1,0 +1,273 @@
+{
+  "puntos": [
+    {
+      "idx": 0,
+      "nombre": "Cliente_7031562287",
+      "destino": "Parque de la Música Ibagué",
+      "producto": "Pala",
+      "peso_kg": 39.18,
+      "lat": 4.434558,
+      "lon": -75.1994499,
+      "destino_lat": 4.4432679,
+      "destino_lon": -75.2443902
+    },
+    {
+      "idx": 1,
+      "nombre": "Cliente_9644671561",
+      "destino": "Centro Comercial Multicentro Ibagué",
+      "producto": "Pala",
+      "peso_kg": 26.29,
+      "lat": 4.3848321,
+      "lon": -75.179379,
+      "destino_lat": 4.4371244,
+      "destino_lon": -75.2012389
+    },
+    {
+      "idx": 2,
+      "nombre": "Cliente_7581321581",
+      "destino": "Terminal de Transportes Ibagué",
+      "producto": "Nevera",
+      "peso_kg": 1.88,
+      "lat": 4.4418555,
+      "lon": -75.2444297,
+      "destino_lat": 4.4368081,
+      "destino_lon": -75.2343496
+    },
+    {
+      "idx": 3,
+      "nombre": "Cliente_2698487863",
+      "destino": "Chapetón Ibagué",
+      "producto": "Documentos",
+      "peso_kg": 49.72,
+      "lat": 4.4392971,
+      "lon": -75.1865514,
+      "destino_lat": 4.459792,
+      "destino_lon": -75.27119
+    },
+    {
+      "idx": 4,
+      "nombre": "Cliente_340198870",
+      "destino": "Parque de la Música Ibagué",
+      "producto": "Juguetes",
+      "peso_kg": 14.33,
+      "lat": 4.4463798,
+      "lon": -75.1798876,
+      "destino_lat": 4.4432679,
+      "destino_lon": -75.2443902
+    },
+    {
+      "idx": 5,
+      "nombre": "Cliente_5045379114",
+      "destino": "Parque de la Música Ibagué",
+      "producto": "Ropa empacada",
+      "peso_kg": 38.27,
+      "lat": 4.4189097,
+      "lon": -75.2515773,
+      "destino_lat": 4.4432679,
+      "destino_lon": -75.2443902
+    },
+    {
+      "idx": 6,
+      "nombre": "Cliente_287388520",
+      "destino": "Plaza de Bolívar Ibagué",
+      "producto": "Caja de medicamentos",
+      "peso_kg": 34.66,
+      "lat": 4.4293383,
+      "lon": -75.1881915,
+      "destino_lat": 4.4446796,
+      "destino_lon": -75.2430511
+    },
+    {
+      "idx": 7,
+      "nombre": "Cliente_2627872529",
+      "destino": "Universidad de Ibagué",
+      "producto": "Ropa empacada",
+      "peso_kg": 35.34,
+      "lat": 4.4312063,
+      "lon": -75.2196638,
+      "destino_lat": 4.449702,
+      "destino_lon": -75.1991135
+    },
+    {
+      "idx": 8,
+      "nombre": "Cliente_11967658274",
+      "destino": "Aeropuerto Perales Ibagué",
+      "producto": "Caja de alimentos secos",
+      "peso_kg": 4.72,
+      "lat": 4.4420011,
+      "lon": -75.1919712,
+      "destino_lat": 4.4217788,
+      "destino_lon": -75.1346535
+    },
+    {
+      "idx": 9,
+      "nombre": "Cliente_9323155756",
+      "destino": "Barrio El Salado Ibagué",
+      "producto": "Pala",
+      "peso_kg": 8.02,
+      "lat": 4.455729,
+      "lon": -75.181178,
+      "destino_lat": 4.4554822,
+      "destino_lon": -75.1344028
+    },
+    {
+      "idx": 10,
+      "nombre": "Cliente_7605984471",
+      "destino": "Chapetón Ibagué",
+      "producto": "Ropa empacada",
+      "peso_kg": 10.35,
+      "lat": 4.3042948,
+      "lon": -75.2114099,
+      "destino_lat": 4.459792,
+      "destino_lon": -75.27119
+    },
+    {
+      "idx": 11,
+      "nombre": "Cliente_703452297",
+      "destino": "Picaleña Ibagué",
+      "producto": "Mueble desmontado",
+      "peso_kg": 29.93,
+      "lat": 4.4454613,
+      "lon": -75.186828,
+      "destino_lat": 4.4299555,
+      "destino_lon": -75.1929699
+    },
+    {
+      "idx": 12,
+      "nombre": "Cliente_2630689661",
+      "destino": "Estadio Manuel Murillo Toro Ibagué",
+      "producto": "Juguetes",
+      "peso_kg": 23.12,
+      "lat": 4.4334829,
+      "lon": -75.1884613,
+      "destino_lat": 4.4298004,
+      "destino_lon": -75.2180031
+    },
+    {
+      "idx": 13,
+      "nombre": "Cliente_7560688217",
+      "destino": "Centro Comercial La Estación Ibagué",
+      "producto": "Caja de productos electrónicos",
+      "peso_kg": 12.12,
+      "lat": 4.4502017,
+      "lon": -75.1355976,
+      "destino_lat": 4.445518,
+      "destino_lon": -75.204593
+    },
+    {
+      "idx": 14,
+      "nombre": "Cliente_2627914902",
+      "destino": "Universidad de Ibagué",
+      "producto": "Colchón",
+      "peso_kg": 25.94,
+      "lat": 4.4322315,
+      "lon": -75.2264506,
+      "destino_lat": 4.449702,
+      "destino_lon": -75.1991135
+    }
+  ],
+  "ruta_voraz": [
+    {
+      "idx": 0,
+      "lat": 4.434558,
+      "lon": -75.1994499,
+      "destino": "Parque de la Música Ibagué"
+    },
+    {
+      "idx": 8,
+      "lat": 4.4420011,
+      "lon": -75.1919712,
+      "destino": "Aeropuerto Perales Ibagué"
+    },
+    {
+      "idx": 11,
+      "lat": 4.4454613,
+      "lon": -75.186828,
+      "destino": "Picaleña Ibagué"
+    },
+    {
+      "idx": 4,
+      "lat": 4.4463798,
+      "lon": -75.1798876,
+      "destino": "Parque de la Música Ibagué"
+    },
+    {
+      "idx": 9,
+      "lat": 4.455729,
+      "lon": -75.181178,
+      "destino": "Barrio El Salado Ibagué"
+    },
+    {
+      "idx": 3,
+      "lat": 4.4392971,
+      "lon": -75.1865514,
+      "destino": "Chapetón Ibagué"
+    },
+    {
+      "idx": 12,
+      "lat": 4.4334829,
+      "lon": -75.1884613,
+      "destino": "Estadio Manuel Murillo Toro Ibagué"
+    },
+    {
+      "idx": 6,
+      "lat": 4.4293383,
+      "lon": -75.1881915,
+      "destino": "Plaza de Bolívar Ibagué"
+    },
+    {
+      "idx": 7,
+      "lat": 4.4312063,
+      "lon": -75.2196638,
+      "destino": "Universidad de Ibagué"
+    },
+    {
+      "idx": 14,
+      "lat": 4.4322315,
+      "lon": -75.2264506,
+      "destino": "Universidad de Ibagué"
+    },
+    {
+      "idx": 2,
+      "lat": 4.4418555,
+      "lon": -75.2444297,
+      "destino": "Terminal de Transportes Ibagué"
+    },
+    {
+      "idx": 5,
+      "lat": 4.4189097,
+      "lon": -75.2515773,
+      "destino": "Parque de la Música Ibagué"
+    },
+    {
+      "idx": 1,
+      "lat": 4.3848321,
+      "lon": -75.179379,
+      "destino": "Centro Comercial Multicentro Ibagué"
+    },
+    {
+      "idx": 10,
+      "lat": 4.3042948,
+      "lon": -75.2114099,
+      "destino": "Chapetón Ibagué"
+    },
+    {
+      "idx": 13,
+      "lat": 4.4502017,
+      "lon": -75.1355976,
+      "destino": "Centro Comercial La Estación Ibagué"
+    },
+    {
+      "idx": 0,
+      "lat": 4.434558,
+      "lon": -75.1994499,
+      "destino": "Parque de la Música Ibagué"
+    }
+  ],
+  "distancia_voraz": 85402.75,
+  "vehiculos": [
+    "moto",
+    "carro",
+    "camion"
+  ]
+}

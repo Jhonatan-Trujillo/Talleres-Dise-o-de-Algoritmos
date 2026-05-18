@@ -25,6 +25,47 @@ def mostrar_banner():
     print("    Ibagué, Tolima — Colombia")
     print("=" * 50)
 
+def exportar_mapa_data(clientes, matriz, ruta_voraz, vehiculos, distancia_voraz):
+    import json
+
+    # Puntos de clientes con coordenadas reales
+    puntos = []
+    for i, c in enumerate(clientes):
+        puntos.append({
+            "idx": i,
+            "nombre": c["nombre"],
+            "destino": c["destino"],
+            "producto": c["producto"],
+            "peso_kg": c["peso_kg"],
+            "lat": c["latitud"],
+            "lon": c["longitud"],
+            "destino_lat": c["destino_latitud"],
+            "destino_lon": c["destino_longitud"]
+        })
+
+    # Ruta voraz como secuencia de coordenadas
+    ruta_voraz_coords = []
+    for idx in ruta_voraz:
+        if idx < len(clientes):
+            ruta_voraz_coords.append({
+                "idx": idx,
+                "lat": clientes[idx]["latitud"],
+                "lon": clientes[idx]["longitud"],
+                "destino": clientes[idx]["destino"]
+            })
+
+    data = {
+        "puntos": puntos,
+        "ruta_voraz": ruta_voraz_coords,
+        "distancia_voraz": distancia_voraz,
+        "vehiculos": [v["tipo"] for v in vehiculos]
+    }
+
+    with open("data/mapa_data.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+    print("  ✓ mapa_data.json generado")
+
 def main():
     mostrar_banner()
 
@@ -87,6 +128,10 @@ def main():
         else:
             print(f"  Sin ruta factible — Voraz: {distancia_voraz_bt} m")
         print(f"  Tiempo: {round(fin - inicio, 4)}s")
+
+    # ─── EXPORTAR DATOS PARA MAPA ──────────────────
+    print("\nExportando datos para mapa interactivo...")
+    exportar_mapa_data(clientes, matriz, ruta_voraz, vehiculos, distancia_voraz)
 
     # ─── RESUMEN FINAL ─────────────────────────────
     print("\n" + "=" * 50)

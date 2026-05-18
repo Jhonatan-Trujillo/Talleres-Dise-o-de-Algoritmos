@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPTIRUTA+ — Mapa Interactivo Ibagué</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="stylesheet" href="mapa.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">OPTIRUTA<span>+</span> / mapa interactivo ibagué</div>
+  <div class="header-stats">
+    <div class="hstat">
+      <div class="hstat-val" id="hdr-clientes">0</div>
+      <div class="hstat-label">clientes</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val" id="hdr-voraz">—</div>
+      <div class="hstat-label">voraz (km)</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val" id="hdr-bt">—</div>
+      <div class="hstat-label">backtracking (km)</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val" id="hdr-mejora">—</div>
+      <div class="hstat-label">mejora (km)</div>
+    </div>
+  </div>
+</header>
+
+<div class="main">
+  <div id="map"></div>
+
+  <div class="panel">
+
+    <div class="panel-section">
+      <div class="panel-title">1. Cargar mapa_data.json</div>
+      <label class="upload-zone">
+        <input type="file" id="file-mapa" accept=".json">
+        <div class="upload-text">📂 mapa_data.json</div>
+        <div class="upload-hint">Generado por main.py</div>
+        <div class="file-ok" id="file-mapa-ok"></div>
+      </label>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-title">2. Cargar pasos backtracking</div>
+      <label class="upload-zone">
+        <input type="file" id="file-pasos" accept=".json">
+        <div class="upload-text">📂 pasos_carro.json</div>
+        <div class="upload-hint">pasos_moto / pasos_carro / pasos_camion</div>
+        <div class="file-ok" id="file-pasos-ok"></div>
+      </label>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-title">Capas del mapa</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <button class="btn active" id="btn-clientes" onclick="toggleCapa('clientes')">📍 Clientes (orígenes)</button>
+        <button class="btn active" id="btn-destinos" onclick="toggleCapa('destinos')">🏁 Destinos</button>
+        <button class="btn active" id="btn-voraz" onclick="toggleCapa('voraz')">🟣 Ruta voraz</button>
+        <button class="btn" id="btn-bt" onclick="toggleCapa('bt')" disabled>🟢 Ruta backtracking</button>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-title">Animación backtracking</div>
+      <div class="btn-row">
+        <button class="btn active" id="btn-play" onclick="togglePlay()" disabled>▶ Play</button>
+        <button class="btn" id="btn-reset-anim" onclick="resetAnim()" disabled>↺</button>
+      </div>
+      <div class="speed-row">
+        <label>Velocidad</label>
+        <input type="range" id="speed" min="1" max="100" value="20" oninput="updateSpeed()">
+        <span id="speed-val">20/s</span>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bg"><div class="progress-fill" id="prog"></div></div>
+        <div class="progress-text">
+          <span id="prog-cur">0</span>
+          <span id="prog-tot">0</span>
+        </div>
+      </div>
+      <div class="anim-step-info" id="anim-info">Carga pasos para animar</div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-title">Leyenda</div>
+      <div class="legend-items">
+        <div class="leg"><div class="leg-dot" style="background:#6c63ff"></div>Cliente (origen)</div>
+        <div class="leg"><div class="leg-dot" style="background:#00e5a0"></div>Destino</div>
+        <div class="leg"><div class="leg-line" style="background:#6c63ff"></div>Ruta voraz</div>
+        <div class="leg"><div class="leg-line" style="background:#00e5a0"></div>Ruta backtracking</div>
+        <div class="leg"><div class="leg-line" style="background:#ffb347"></div>Backtrack</div>
+        <div class="leg"><div class="leg-line" style="background:#ff5c5c"></div>Poda</div>
+      </div>
+    </div>
+
+    <div class="info-scroll" id="info-scroll">
+      <div style="font-size:11px;color:var(--muted);font-family:var(--mono);text-align:center;padding:20px 0">
+        Carga mapa_data.json para ver los clientes
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="mapa.js"></script>
+</body>
+</html>
