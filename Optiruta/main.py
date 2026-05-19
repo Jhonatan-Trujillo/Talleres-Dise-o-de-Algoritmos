@@ -68,7 +68,7 @@ def exportar_mapa_data(clientes, matriz, ruta_voraz, vehiculos, distancia_voraz)
 
 def main():
     mostrar_banner()
-
+    N_CLIENTES = 8
     # ─── PASO 1: Cargar datos ─────────────────────
     print("\n[1/4] Cargando datos...")
     clientes, matriz, vehiculos = cargar_todo()
@@ -87,14 +87,15 @@ def main():
     
     # ─── PASO 3: Ruta voraz ────────────────────────
     print("\n[3/4] Calculando ruta inicial (Algoritmo Voraz)...")
-    ruta_voraz, distancia_voraz = vecino_mas_cercano(matriz)
+    matriz_voraz = [fila[:N_CLIENTES] for fila in matriz[:N_CLIENTES]]
+    ruta_voraz, distancia_voraz = vecino_mas_cercano(matriz_voraz)
     print(f"  Ruta: {ruta_voraz}")
     print(f"  Distancia total: {distancia_voraz} m ({round(distancia_voraz/1000, 2)} km)")
-    print(f"  Complejidad: O(n²) donde n={len(clientes)}")
+    print(f"  Complejidad: O(n²) donde n={N_CLIENTES}")
 
     # ─── PASO 3B: Mochila DP por vehículo ─────────
     print("\n  Asignación de paquetes por vehículo (Knapsack DP):")
-    paquetes = [{"nombre": c["producto"], "peso": c["peso_kg"]} for c in clientes]
+    paquetes = [{"nombre": c["producto"], "peso": c["peso_kg"]} for c in clientes[:N_CLIENTES]]
     for vehiculo in vehiculos:
         capacidad = vehiculo["peso_max_kg"]
         peso_total, seleccionados = mochila_dp(capacidad, paquetes)
@@ -102,7 +103,6 @@ def main():
     
     # ─── PASO 4: Backtracking ──────────────────────
     print("\n[4/4] Optimizando con Backtracking...")
-    N_CLIENTES = 8
     clientes_bt = clientes[:N_CLIENTES]
     matriz_bt = [fila[:N_CLIENTES] for fila in matriz[:N_CLIENTES]]
     pesos = [c["peso_kg"] for c in clientes_bt]
@@ -131,19 +131,20 @@ def main():
 
     # ─── EXPORTAR DATOS PARA MAPA ──────────────────
     print("\nExportando datos para mapa interactivo...")
-    exportar_mapa_data(clientes, matriz, ruta_voraz, vehiculos, distancia_voraz)
+    exportar_mapa_data(clientes[:N_CLIENTES], matriz, ruta_voraz, vehiculos, distancia_voraz)
 
-    # ─── RESUMEN FINAL ─────────────────────────────
+# ─── RESUMEN FINAL ─────────────────────────────
     print("\n" + "=" * 50)
     print("  RESUMEN COMPARATIVO")
     print("=" * 50)
-    print(f"  Voraz  (n=15): {distancia_voraz} m — O(n²)")
-    print(f"  Voraz  (n=8):  {distancia_voraz_bt} m — O(n²)")
+    print(f"  Clientes:      {N_CLIENTES}")
+    print(f"  Voraz:         {distancia_voraz} m — O(n²)")
     print(f"  Backtracking:  {distancia} m — O(n!) podado")
-    print(f"  Mejora:        {round(distancia_voraz_bt - distancia, 2)} m")
+    print(f"  Mejora:        {round(distancia_voraz - distancia, 2)} m")
     print("=" * 50)
     print("\n✓ Archivos de pasos generados en data/")
-    print("✓ Abre visualizacion/index.html para ver el backtracking")
+    print("✓ Abre visualizacion/mapa.html para ver el mapa interactivo")
+    print("✓ Abre visualizacion/index.html para ver el árbol de backtracking")
 
 if __name__ == "__main__":
     main()
