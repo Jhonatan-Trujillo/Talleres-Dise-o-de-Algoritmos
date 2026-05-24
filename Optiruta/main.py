@@ -25,7 +25,7 @@ def mostrar_banner():
     print("    Ibagué, Tolima — Colombia")
     print("=" * 50)
 
-def exportar_mapa_data(clientes, matriz, ruta_voraz, vehiculos, distancia_voraz):
+def exportar_mapa_data(clientes, matriz, ruta_voraz, vehiculos, distancia_voraz, asignacion_vehiculos):
     import json
 
     # Puntos de clientes con coordenadas reales
@@ -58,7 +58,9 @@ def exportar_mapa_data(clientes, matriz, ruta_voraz, vehiculos, distancia_voraz)
         "puntos": puntos,
         "ruta_voraz": ruta_voraz_coords,
         "distancia_voraz": distancia_voraz,
-        "vehiculos": [v["tipo"] for v in vehiculos]
+        "vehiculos": [v["tipo"] for v in vehiculos],
+        "asignacion_vehiculos": asignacion_vehiculos,
+        "matriz_distancias": matriz
     }
 
     with open("data/mapa_data.json", "w", encoding="utf-8") as f:
@@ -93,15 +95,21 @@ def main():
     print(f"  Distancia total: {distancia_voraz} m ({round(distancia_voraz/1000, 2)} km)")
     print(f"  Complejidad: O(n²) donde n={N_CLIENTES}")
 
-    # ─── PASO 3B: Mochila DP por vehículo ─────────
+# ─── PASO 3B: Mochila DP por vehículo ─────────
     print("\n  Asignación de paquetes por vehículo (Knapsack DP):")
     paquetes = [{"nombre": c["producto"], "peso": c["peso_kg"]} for c in clientes[:N_CLIENTES]]
+    asignacion_vehiculos = []
     for vehiculo in vehiculos:
         capacidad = vehiculo["peso_max_kg"]
         peso_total, seleccionados = mochila_dp(capacidad, paquetes)
+        asignacion_vehiculos.append({
+            "tipo": vehiculo["tipo"],
+            "capacidad": capacidad,
+            "peso_cargado": peso_total,
+            "paquetes": seleccionados
+        })
         print(f"  → {vehiculo['tipo']} ({capacidad}kg): {peso_total}kg cargados — {len(seleccionados)} paquetes")
-    
-    # ─── PASO 4: Backtracking ──────────────────────
+# ─── PASO 4: Backtracking ──────────────────────
     print("\n[4/4] Optimizando con Backtracking...")
     clientes_bt = clientes[:N_CLIENTES]
     matriz_bt = [fila[:N_CLIENTES] for fila in matriz[:N_CLIENTES]]
@@ -111,6 +119,9 @@ def main():
 
     print(f"  Instancia: {N_CLIENTES} clientes")
     print(f"  Límite superior voraz: {distancia_voraz_bt} m")
+
+    ruta_bt_final = []
+    distancia_bt_final = 0.0
 
     for vehiculo in vehiculos:
         capacidad = vehiculo["peso_max_kg"]
@@ -125,13 +136,16 @@ def main():
             mejora = round(distancia_voraz_bt - distancia, 2)
             print(f"  Ruta óptima: {ruta}")
             print(f"  Distancia: {distancia} m — Mejora: {mejora} m")
+            if not ruta_bt_final:  # guarda la primera ruta factible
+                ruta_bt_final = ruta
+                distancia_bt_final = distancia
         else:
             print(f"  Sin ruta factible — Voraz: {distancia_voraz_bt} m")
         print(f"  Tiempo: {round(fin - inicio, 4)}s")
 
     # ─── EXPORTAR DATOS PARA MAPA ──────────────────
     print("\nExportando datos para mapa interactivo...")
-    exportar_mapa_data(clientes[:N_CLIENTES], matriz, ruta_voraz, vehiculos, distancia_voraz)
+    exportar_mapa_data(clientes[:N_CLIENTES], matriz_voraz, ruta_voraz, vehiculos, distancia_voraz, asignacion_vehiculos)
 
 # ─── RESUMEN FINAL ─────────────────────────────
     print("\n" + "=" * 50)

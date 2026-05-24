@@ -124,9 +124,35 @@ function renderMapa() {
         (coordsVoraz[i][0] + coordsVoraz[i+1][0]) / 2,
         (coordsVoraz[i][1] + coordsVoraz[i+1][1]) / 2
       ];
-      L.circleMarker(mid, {
-        radius: 3, color: '#6c63ff', fillColor: '#6c63ff', fillOpacity: 1, weight: 0
-      }).addTo(capas.voraz);
+
+      const desde = rutaVoraz[i].idx;
+      const hasta = rutaVoraz[i+1] ? rutaVoraz[i+1].idx : 0;
+      const distancia = mapaData.matriz_distancias
+        ? mapaData.matriz_distancias[desde][hasta]
+        : null;
+
+      if (distancia !== null) {
+        L.marker(mid, {
+          icon: L.divIcon({
+            className: '',
+            html: `<div style="
+              background:rgba(108,99,255,0.85);
+              color:white;
+              font-family:'JetBrains Mono',monospace;
+              font-size:9px;
+              padding:2px 5px;
+              border-radius:4px;
+              white-space:nowrap;
+              box-shadow:0 1px 4px rgba(0,0,0,0.4);
+            ">${(distancia/1000).toFixed(2)} km</div>`,
+            iconAnchor: [20, 10]
+          })
+        }).addTo(capas.voraz);
+      } else {
+        L.circleMarker(mid, {
+          radius: 3, color: '#6c63ff', fillColor: '#6c63ff', fillOpacity: 1, weight: 0
+        }).addTo(capas.voraz);
+      }
     }
   }
   capas.voraz.addTo(map);
@@ -135,7 +161,9 @@ function renderMapa() {
     map.fitBounds(L.latLngBounds(coordsVoraz), { padding: [40, 40] });
   }
 
-  renderInfoPanel(puntos);
+  if (mapaData.asignacion_vehiculos) {
+    renderAsignacion(mapaData.asignacion_vehiculos);
+  }
 }
 
 function renderInfoPanel(puntos) {
@@ -152,6 +180,29 @@ function renderInfoPanel(puntos) {
     card.style.cursor = 'pointer';
     card.onclick = () => map.setView([p.lat, p.lon], 16);
     scroll.appendChild(card);
+  });
+}
+
+function renderAsignacion(asignacion) {
+  const container = document.getElementById('asignacion-container');
+  container.innerHTML = '';
+
+  asignacion.forEach(v => {
+    const card = document.createElement('div');
+    card.className = 'info-card';
+    const pct = Math.round(v.peso_cargado / v.capacidad * 100);
+    card.innerHTML = `
+      <div class="info-card-title">🚗 ${v.tipo}</div>
+      <div class="info-row"><span>Cargado</span><span>${v.peso_cargado}kg</span></div>
+      <div class="info-row"><span>Capacidad</span><span>${v.capacidad}kg</span></div>
+      <div class="info-row"><span>Uso</span><span>${pct}%</span></div>
+      <div style="background:var(--surface2);border-radius:4px;height:4px;margin:6px 0">
+        <div style="background:var(--accent);height:100%;width:${pct}%;border-radius:4px"></div>
+      </div>
+      <div class="info-row"><span>Paquetes</span><span>${v.paquetes.length}</span></div>
+      <div style="margin-top:6px;font-size:10px;color:var(--muted);line-height:1.6">${v.paquetes.join('<br>')}</div>
+    `;
+    container.appendChild(card);
   });
 }
 

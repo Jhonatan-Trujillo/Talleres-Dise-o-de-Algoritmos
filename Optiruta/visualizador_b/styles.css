@@ -261,3 +261,13 @@ input[type=range] { flex: 1; accent-color: var(--accent); }
 .file-name { font-size: 11px; color: var(--green); font-family: var(--mono); margin-top: 6px; }
 
 .btn-row { display: flex; gap: 8px; }
+
+.panel-left {
+  width: 220px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  z-index: 2;
+}
