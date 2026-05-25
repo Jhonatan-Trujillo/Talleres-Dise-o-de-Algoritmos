@@ -6,8 +6,8 @@ import json
 # Agregar ruta para imports
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from algoritmos.voraz import cargar_dataset, vecino_mas_cercano
-from algoritmos.mochila_dp import cargar_datos, mochila_dp
+from algoritmos.voraz import vecino_mas_cercano
+from algoritmos.mochila_dp import mochila_dp
 from algoritmos.ordenamiento import insertion_sort
 from algoritmos.backtracking import backtracking
 
@@ -95,7 +95,7 @@ def main():
     print(f"  Distancia total: {distancia_voraz} m ({round(distancia_voraz/1000, 2)} km)")
     print(f"  Complejidad: O(n²) donde n={N_CLIENTES}")
 
-# ─── PASO 3B: Mochila DP por vehículo ─────────
+    # ─── PASO 3B: Mochila DP por vehículo ─────────
     print("\n  Asignación de paquetes por vehículo (Knapsack DP):")
     paquetes = [{"nombre": c["producto"], "peso": c["peso_kg"]} for c in clientes[:N_CLIENTES]]
     asignacion_vehiculos = []
@@ -109,7 +109,7 @@ def main():
             "paquetes": seleccionados
         })
         print(f"  → {vehiculo['tipo']} ({capacidad}kg): {peso_total}kg cargados — {len(seleccionados)} paquetes")
-# ─── PASO 4: Backtracking ──────────────────────
+    # ─── PASO 4: Backtracking ──────────────────────
     print("\n[4/4] Optimizando con Backtracking...")
     clientes_bt = clientes[:N_CLIENTES]
     matriz_bt = [fila[:N_CLIENTES] for fila in matriz[:N_CLIENTES]]
@@ -147,14 +147,17 @@ def main():
     print("\nExportando datos para mapa interactivo...")
     exportar_mapa_data(clientes[:N_CLIENTES], matriz_voraz, ruta_voraz, vehiculos, distancia_voraz, asignacion_vehiculos)
 
-# ─── RESUMEN FINAL ─────────────────────────────
+    # ─── RESUMEN FINAL ─────────────────────────────
     print("\n" + "=" * 50)
     print("  RESUMEN COMPARATIVO")
     print("=" * 50)
     print(f"  Clientes:      {N_CLIENTES}")
     print(f"  Voraz:         {distancia_voraz} m — O(n²)")
-    print(f"  Backtracking:  {distancia} m — O(n!) podado")
-    print(f"  Mejora:        {round(distancia_voraz - distancia, 2)} m")
+    if distancia_bt_final > 0:
+        print(f"  Backtracking:  {distancia_bt_final} m — O(n!) podado")
+        print(f"  Mejora:        {round(distancia_voraz - distancia_bt_final, 2)} m")
+    else:
+        print(f"  Backtracking:  Sin ruta factible")
     print("=" * 50)
     print("\n✓ Archivos de pasos generados en data/")
     print("✓ Abre visualizacion/mapa.html para ver el mapa interactivo")
